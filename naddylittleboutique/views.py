@@ -4,9 +4,6 @@ from django.contrib.auth import authenticate, login, get_user_model
 
 from .validations.forms import ContactForm, LoginForm, RegisterForm
 
-def home_pageold(request):
-    return HttpResponse("hello world")
-
 def login_page(request):
     form = LoginForm(request.POST or None)
     #print(request.user.is_authenticated())
@@ -32,6 +29,7 @@ def login_page(request):
  
 
     return render(request, "auth/login.html",context )
+
 User = get_user_model()
 def register_page(request):
     form = RegisterForm(request.POST or None)
